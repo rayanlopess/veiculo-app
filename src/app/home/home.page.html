@@ -1,20 +1,98 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Veículos
     </ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button (click)="toggleDarkMode()">
+        <ion-icon [name]="iconName"></ion-icon>
+      </ion-button>
+
+      <ion-button>
+        <ion-icon name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+  <!--  -->
+  <ion-grid>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Welcome, Rayan!</ion-card-title>
+            <ion-card-subtitle>Local time: {{ currentTime }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+
+        
+          <ion-card class="cards" >
+
+            <ion-card-header>
+              <div class="grid-apresentacao">
+  
+                <ion-card-title (click)="mostrarInformacao()">Corsa</ion-card-title>
+                <ion-buttons lot="end">
+                  <ion-button (click)="editar()">
+                    <ion-icon id="editar" name="create"></ion-icon>
+                  </ion-button>
+                  <ion-button (click)="deletar()">
+                    <ion-icon name="trash" color="danger"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+                
+              </div>
+            </ion-card-header>
+          </ion-card>
+  
+  
+     
+
+
+
+
+
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+
+
+
+
+
+
+
+  <!-- menuzinho -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="senac-orange">
+      <ion-icon class="icons" name="chevron-up"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="danger" (click)="deletarTudo()">
+        <ion-icon class="icons" name="trash"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="success" routerLink="/adicionar-veiculo">
+        <ion-icon class="icons" name="add"></ion-icon>
+      </ion-fab-button>
+
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

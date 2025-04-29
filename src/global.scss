@@ -35,3 +35,47 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+
+// root
+:root {
+    //root senac blue color
+	--ion-color-senac-blue: #004A8D;
+	--ion-color-senac-blue-rgb: 0,74,141;
+	--ion-color-senac-blue-contrast: #ffffff;
+	--ion-color-senac-blue-contrast-rgb: 255,255,255;
+	--ion-color-senac-blue-shade: #00417c;
+	--ion-color-senac-blue-tint: #1a5c98;
+
+    // root of senac orange color
+    --ion-color-senac-orange: #F7941D;
+	--ion-color-senac-orange-rgb: 247,148,29;
+	--ion-color-senac-orange-contrast: #000000;
+	--ion-color-senac-orange-contrast-rgb: 0,0,0;
+	--ion-color-senac-orange-shade: #d9821a;
+	--ion-color-senac-orange-tint: #f89f34;
+}
+
+// property of senac blue color
+.ion-color-senac-blue {
+	--ion-color-base: var(--ion-color-senac-blue);
+	--ion-color-base-rgb: var(--ion-color-senac-blue-rgb);
+	--ion-color-contrast: var(--ion-color-senac-blue-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-senac-blue-contrast-rgb);
+	--ion-color-shade: var(--ion-color-senac-blue-shade);
+	--ion-color-tint: var(--ion-color-senac-blue-tint);
+}
+
+// property of senac orange color
+.ion-color-senac-orange {
+	--ion-color-base: var(--ion-color-senac-orange);
+	--ion-color-base-rgb: var(--ion-color-senac-orange-rgb);
+	--ion-color-contrast: var(--ion-color-senac-orange-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-senac-orange-contrast-rgb);
+	--ion-color-shade: var(--ion-color-senac-orange-shade);
+	--ion-color-tint: var(--ion-color-senac-orange-tint);
+}
+
+.secondary{
+    color: red !important;
+}

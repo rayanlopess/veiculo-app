@@ -1,2 +1,58 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+ion-toolbar{
+    --background: #004A8D;
+}
+
+// dark mode
+body.dark{
+    --ion-background-color: #2f2f2f;
+}
+body.dark .icons{
+    color: #2f2f2f;
+}
+body.dark ion-card{
+    background-color: #222222;
+    border: 1px solid #252525;
+}
+body.dark ion-card-title{
+    color: #f6f8fc;
+}
+body.dark #editar{
+    color: #f6f8fc;
+}
+body.dark .alert-title{
+    color: #f6f8fc !important;
+}
+body.dark .alert-input{
+    color: #f6f8fc !important;
+}
+
+// light mode
+body{
+    --ion-background-color: #f6f8fc;
+}
+body .icons{
+    color: #f6f8fc;
+}
+body ion-card{
+    background-color: #f6f8fc;
+    border: 1px solid #004A8D;
+}
+body ion-card-title{
+    color: #2f2f2f;
+}
+body .cards{
+    --background: #f6f8fc;
+    color: #2f2f2f;
+}
+body #editar{
+    color: #004A8D;
+}
+body .alert-title{
+    color: #2f2f2f !important;
+}
+body .alert-input{
+    color: #2f2f2f !important;
+}
