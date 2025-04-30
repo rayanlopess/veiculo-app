@@ -20,12 +20,11 @@
     <ion-row>
       <ion-col>
           <ion-input 
-          type="email"
           label="Marca" 
           label-placement="floating" 
           fill="outline"
           [clearInput]="true"
-       
+          color="senac-orange"
           placeholder='Ex: "Chevrolet"'
           [counter]="true" 
           maxlength="20"
@@ -44,6 +43,7 @@
           placeholder='Ex: "Corsa"'
           [counter]="true" 
           maxlength="20"
+          color="senac-orange"
           >
             <div slot="label">Modelo: <ion-text color="danger">(Obrigatório)</ion-text></div>
           </ion-input>
@@ -53,16 +53,18 @@
  
 
     <ion-row>
-      <ion-col>
-        <ion-label>Selecione a data</ion-label>
-        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      <ion-col id="coluna">
+        <ion-label>Selecione o ano do modelo:</ion-label>
+        <ion-datetime-button datetime="datetime" color="senac-orange"></ion-datetime-button>
 
-        <ion-modal [keepContentsMounted]="true">
+        <ion-modal [keepContentsMounted]="true" class="no-gradient-modal">
           <ng-template>
             <ion-datetime
+              color="senac-orange"
               id="datetime"
               presentation="month-year"
-              value="2023-11T01:22:00"
+              value="2023-11"
+              [style]="'--background: var(--ion-color-senac-blue)'"
               [formatOptions]="{
                 date: {
                   year: '2-digit',
@@ -74,10 +76,18 @@
             ></ion-datetime>
           </ng-template>
         </ion-modal>
+
+        
         
       </ion-col>
     </ion-row>
-
+    <ion-row>
+      <ion-col>
+        <ion-button id="botaoSalvar" expand="block">
+          Salvar
+        </ion-button>
+      </ion-col>
+    </ion-row>
 
   </ion-grid>
 

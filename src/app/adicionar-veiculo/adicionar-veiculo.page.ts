@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, IonList, IonItem, IonInput, IonText, IonDatetime, IonGrid, IonRow, IonCol, IonLabel, IonDatetimeButton, IonModal} from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, IonInput, IonText, IonDatetime, IonGrid, IonRow, IonCol, IonLabel, IonDatetimeButton, IonModal, IonButton} from '@ionic/angular/standalone';
 
 
 
@@ -14,7 +14,7 @@ import { add, trash, chevronUp, personCircle, moon, settings, sunny, create} fro
   templateUrl: './adicionar-veiculo.page.html',
   styleUrls: ['./adicionar-veiculo.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonList, IonItem, IonInput, IonText, IonDatetime, IonGrid, IonRow, IonCol, IonLabel, IonDatetimeButton, IonModal]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonInput, IonText, IonDatetime, IonGrid, IonRow, IonCol, IonLabel, IonDatetimeButton, IonModal, IonButton]
 })
 export class AdicionarVeiculoPage implements OnInit {
 

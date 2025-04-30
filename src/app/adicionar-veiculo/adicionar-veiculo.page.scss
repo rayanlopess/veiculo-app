@@ -7,7 +7,33 @@ ion-grid{
     margin-bottom: 5%;
 
 }
-ion-datetime{
-    margin-top: 10px;
-    height: 50%;
+ion-datetime-button{
+    margin-left: 5%;
+    display: inline;
+   
 }
+#botaoSalvar{
+    margin-top: 5%;
+    --background: #004A8D;
+    --color: #f6f8fc;
+}
+
+
+
+
+/* Remove TODOS os gradientes do ion-datetime */
+no-gradient-modal {
+    --backdrop-opacity: 0.7;
+    
+    ion-datetime {
+      --background: var(senac-orange) !important;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      
+      /* Remove o fundo escuro interno */
+      .datetime-wrapper {
+        background: transparent !important;
+      }
+    }
+  }
+

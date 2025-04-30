@@ -91,4 +91,32 @@
     ion-header {
       padding-top: 25px; /* Ajuste manual se necessário */
     }
+}
+
+ion-datetime {
+    --background: var(0, 74, 141, 0) !important;
+    --background-rgb: 0, 74, 141 !important; /* Remove o gradiente escuro */
+	color:#f6f8fc;
+
+    /* Remove o overlay dos dias */
+    &::part(calendar-day active) {
+      background: transparent !important;
+    }
+    
+    /* Remove o highlight do cabeçalho */
+    .datetime-header {
+      background: transparent !important;
+    }
+    
+    /* Remove gradiente dos botões */
+    .datetime-highlight {
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+    
+    /* Remove sombras e efeitos */
+    .datetime-wrapper {
+      box-shadow: none !important;
+      background: transparent !important;
+    }
   }
