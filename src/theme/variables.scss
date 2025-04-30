@@ -28,6 +28,33 @@ body.dark .alert-title{
 body.dark .alert-input{
     color: #f6f8fc !important;
 }
+body.dark ion-grid{
+    background-color: #2f2f2f;
+    color: #f6f8fc;
+}
+body.dark ion-input{
+    background-color: #2f2f2f;
+    color: #f6f8fc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // light mode
 body{
@@ -55,4 +82,12 @@ body .alert-title{
 }
 body .alert-input{
     color: #2f2f2f !important;
+}
+body ion-input{
+    background-color: #f6f8fc;
+    color: #222222;
+}
+body ion-grid{
+    background-color: #f6f8fc;
+    color: #222222;
 }

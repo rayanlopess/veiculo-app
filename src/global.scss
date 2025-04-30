@@ -79,3 +79,16 @@
 .secondary{
     color: red !important;
 }
+.alert-message {
+	white-space: pre-line; // Faz o \n funcionar
+  }
+
+  ion-header {
+    padding-top: env(safe-area-inset-top); /* Adapta ao espaço seguro */
+    background: #004A8D; /* Ou qualquer outra cor escura */
+}
+@media screen and (max-width: 768px) { 
+    ion-header {
+      padding-top: 25px; /* Ajuste manual se necessário */
+    }
+  }

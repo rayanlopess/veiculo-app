@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, model} from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Preferences } from '@capacitor/preferences';
 
@@ -99,13 +99,23 @@ export class HomePage {
 
 
 
+  public marca:string = 'Chevrolet';
+  public modelo:string = 'Corsa';
+  public ano:number = 2007;
 
   async mostrarInformacao(){
+    
     const alert = await this.alertController.create({
-      header: 'A Short Title Is Best',
-      subHeader: 'A Sub Header Is Optional',
-      message: 'A message should be a short, complete sentence.',
-      buttons: ['Action'],
+      header: 'Informações do Veículo:',
+      message: `Marca: ${this.marca} \n Modelo: ${this.modelo} \n Ano: ${this.ano}`,
+      buttons: [{
+        text: 'OK',
+        role: 'confirm',
+        cssClass: 'agree',
+        handler: () => {
+          
+        }
+      }]
     });
 
     await alert.present();
@@ -147,22 +157,22 @@ export class HomePage {
 
   async editor(){
     const alert = await this.alertController.create({
-      header: 'Editando "Corsa":',
+      header: `Editando ${this.modelo}:`,
       message: 'Preencha os campos.',
       cssClass: 'titulo-alert',
       inputs: [
         {
-          placeholder: '"Chevrolet"',
+          placeholder: `"${this.marca}"`,
         },
         {
-          placeholder: '"Corsa"',
+          placeholder: `"${this.modelo}"`,
           attributes: {
             maxlength: 8,
           },
         },
         {
           type: 'number',
-          placeholder: '"2007"',
+          placeholder: `"${this.ano}"`,
           min: 1970,
           max: 2025,
         }
@@ -214,39 +224,76 @@ export class HomePage {
         role: 'confirm',
         cssClass: 'secondary',
         handler: () => {
-          
+          this.alertDelete();
         },
       }]
     })
 
     await alert.present();
   }
+
+
+
+
+  atualizar() {
+
+    
+    
+    
+  }
+   
+  
 
   async deletarTudo(){
     const alert = await this.alertController.create({
       header: 'Deseja realmente deletar tudo?',
-      cssClass: 'titulo-alert',
-      buttons:[{
-        text: 'Cancelar',
-        role: 'cancel',
-        cssClass: 'agree',
-        handler: () => {
-          console.log('Alert canceled');
-        },
-      },
-      {
-        text: 'deletar',
-        role: 'confirm',
-        cssClass: 'secondary',
-        handler: () => {
+      buttons: [{
+          text: 'Cancelar',
+          handler: () => {
+            console.log('cancelado')
+          }
+        },{
+          text: 'Deletar',
+          cssClass: 'secondary', 
           
-        },
-      }]
-    })
-
-    await alert.present();
+          handler: () => {
+            
+           this.alertDelete();
+  
+           
+          }
+        }
+      
+      ]
+    });
+    (await alert).present();
+    let result = await alert.onDidDismiss();
+    console.log(result);
+    
   }
 
+  async alertDelete(){
+
+    const alert = this.alertController.create({
+      header: 'Deletado com sucesso!',
+      buttons: [{
+        text: 'Ok', 
+        handler: ()=>{
+          this.atualizar();
+          
+      }}]
+    });
+  
+    (await alert).present();
+    let result1 = (await alert).onDidDismiss();
+    console.log(result1);
+  }
+  
+
+
+
+
 }
+
 
 

@@ -1,13 +1,85 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>adicionar-veiculo</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Adicionar</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">adicionar-veiculo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-title id="texto1">Informações do veículo:</ion-title>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+          <ion-input 
+          type="email"
+          label="Marca" 
+          label-placement="floating" 
+          fill="outline"
+          [clearInput]="true"
+       
+          placeholder='Ex: "Chevrolet"'
+          [counter]="true" 
+          maxlength="20"
+          >
+            <div slot="label">Marca: <ion-text color="danger">(Obrigatório)</ion-text></div>
+          </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+          <ion-input label="Modelo" 
+          label-placement="floating" 
+          fill="outline"
+          [clearInput]="true"
+          placeholder='Ex: "Corsa"'
+          [counter]="true" 
+          maxlength="20"
+          >
+            <div slot="label">Modelo: <ion-text color="danger">(Obrigatório)</ion-text></div>
+          </ion-input>
+      </ion-col>
+    </ion-row>
+
+ 
+
+    <ion-row>
+      <ion-col>
+        <ion-label>Selecione a data</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="datetime"
+              presentation="month-year"
+              value="2023-11T01:22:00"
+              [formatOptions]="{
+                date: {
+                  year: '2-digit',
+                  month: '2-digit'
+                 
+                }
+                
+              }"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+        
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+
+
 </ion-content>
