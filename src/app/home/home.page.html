@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Veículos
-    </ion-title>
+    <ion-title>Veículos</ion-title>
 
     <ion-buttons slot="end">
 
@@ -31,8 +29,8 @@
       <ion-col>
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Welcome, Rayan!</ion-card-title>
-            <ion-card-subtitle>Local time: {{ currentTime }}</ion-card-subtitle>
+            <ion-card-title>Bem-vindo, Rayan!</ion-card-title>
+            <ion-card-subtitle>Horal local: {{ currentTime }}</ion-card-subtitle>
           </ion-card-header>
         </ion-card>
       </ion-col>
@@ -42,17 +40,17 @@
       <ion-col>
 
         
-          <ion-card class="cards" >
+          <ion-card class="cards" *ngFor="let item of dados;">
 
             <ion-card-header>
               <div class="grid-apresentacao">
   
-                <ion-card-title (click)="mostrarInformacao()">Corsa</ion-card-title>
+                <ion-card-title (click)="mostrarInformacao(item.id)">{{ item.modelo }}</ion-card-title>
                 <ion-buttons lot="end">
-                  <ion-button (click)="editar()">
+                  <ion-button (click)="editar(item.id)">
                     <ion-icon id="editar" name="create"></ion-icon>
                   </ion-button>
-                  <ion-button (click)="deletar()">
+                  <ion-button (click)="deletar(item.id)">
                     <ion-icon name="trash" color="danger"></ion-icon>
                   </ion-button>
                 </ion-buttons>

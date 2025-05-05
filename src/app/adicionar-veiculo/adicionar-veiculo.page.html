@@ -28,6 +28,7 @@
           placeholder='Ex: "Chevrolet"'
           [counter]="true" 
           maxlength="20"
+          [(ngModel)]="marca"
           >
             <div slot="label">Marca: <ion-text color="danger">(Obrigatório)</ion-text></div>
           </ion-input>
@@ -44,8 +45,9 @@
           [counter]="true" 
           maxlength="20"
           color="senac-orange"
+          [(ngModel)]="modelo"
           >
-            <div slot="label">Modelo: <ion-text color="danger">(Obrigatório)</ion-text></div>
+            <div slot="label">Modelo: <ion-text color="danger" >(Obrigatório)</ion-text></div>
           </ion-input>
       </ion-col>
     </ion-row>
@@ -60,19 +62,12 @@
         <ion-modal [keepContentsMounted]="true" class="no-gradient-modal">
           <ng-template>
             <ion-datetime
-              color="senac-orange"
               id="datetime"
-              presentation="month-year"
-              value="2023-11"
+              presentation="year"  
+              [(ngModel)]="ano"
+              color="senac-orange"
               [style]="'--background: var(--ion-color-senac-blue)'"
-              [formatOptions]="{
-                date: {
-                  year: '2-digit',
-                  month: '2-digit'
-                 
-                }
-                
-              }"
+              [formatOptions]="{ year: 'numeric' }"  
             ></ion-datetime>
           </ng-template>
         </ion-modal>
@@ -83,7 +78,7 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button id="botaoSalvar" expand="block">
+        <ion-button id="botaoSalvar" expand="block" (click)="salvar()">
           Salvar
         </ion-button>
       </ion-col>
